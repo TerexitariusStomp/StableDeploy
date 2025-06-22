@@ -23,7 +23,8 @@ export default defineConfig({
       'utils': path.resolve(__dirname, './src/utils'),
       'views': path.resolve(__dirname, './src/views'),
       'hooks': path.resolve(__dirname, './src/hooks'),
-      'theme': path.resolve(__dirname, './src/theme.ts')
+      'theme': path.resolve(__dirname, './src/theme.ts'),
+      'abis': path.resolve(__dirname, './src/abis')
     }
   }
 })
