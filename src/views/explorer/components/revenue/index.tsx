@@ -1,6 +1,6 @@
-import rtokens from '@reserve-protocol/rtokens'
+import * as rtokens from '@reserve-protocol/rtokens'
 import { createColumnHelper } from '@tanstack/react-table'
-import FacadeRead from 'abis/FacadeRead'
+import { default as FacadeRead } from 'abis/FacadeRead'
 import CollapsableBox from '@/components/old/boxes/CollapsableBox'
 import AuctionsIcon from 'components/icons/AuctionsIcon'
 import TokenLogo from 'components/icons/TokenLogo'
