@@ -25,7 +25,11 @@ const useContractWrite = <
   const { data: gas } = useEstimateGas(data?.request ? {
     ...data.request,
     type: 'eip1559',
-    account: data.request.account?.address || data.request.account,
+    account: data.request.account
+      ? (typeof data.request.account === 'object'
+        ? data.request.account.address
+        : data.request.account)
+      : undefined,
     gasPrice: undefined,
     maxFeePerBlobGas: undefined,
     maxFeePerGas: undefined,
@@ -33,8 +37,9 @@ const useContractWrite = <
     blobs: undefined,
     blobVersionedHashes: undefined,
     accessList: undefined,
-    dataSuffix: undefined,
-    nonce: undefined
+    nonce: undefined,
+    kzg: undefined,
+    sidecars: undefined
   } : undefined)
 
   const contractWrite = useWriteContract()
@@ -46,7 +51,11 @@ const useContractWrite = <
         ...data.request,
         gas: getSafeGasLimit(gas),
         type: 'eip1559',
-        account: data.request.account?.address || data.request.account,
+        account: data.request.account
+          ? (typeof data.request.account === 'object'
+            ? data.request.account.address
+            : data.request.account)
+          : undefined,
         gasPrice: undefined,
         maxFeePerBlobGas: undefined,
         maxFeePerGas: undefined,
@@ -54,8 +63,9 @@ const useContractWrite = <
         blobs: undefined,
         blobVersionedHashes: undefined,
         accessList: undefined,
-        dataSuffix: undefined,
-        nonce: undefined
+        nonce: undefined,
+        kzg: undefined,
+        sidecars: undefined
       })
     }
   }, [data?.request, writeContract, gas])
