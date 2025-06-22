@@ -1,16 +1,16 @@
-import Layout from 'components/rtoken-setup/Layout'
+import Layout from '@/components/rtoken-setup/Layout'
 import {
   backupCollateralAtom,
   basketAtom,
   rTokenDefaultValues,
   revenueSplitAtom,
-} from 'components/rtoken-setup/atoms'
+} from '@/components/rtoken-setup/atoms'
 import { useAtomValue, useSetAtom } from 'jotai'
 import { useResetAtom } from 'jotai/utils'
 import { useCallback, useEffect, useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
-import { chainIdAtom } from 'state/atoms'
-import { rTokenMetaAtom } from 'state/rtoken/atoms/rTokenAtom'
+import { chainIdAtom } from '@/state/atoms'
+import { rTokenMetaAtom } from '@/state/rtoken/atoms/rTokenAtom'
 import { Box } from 'theme-ui'
 import { Address } from 'viem'
 import DeployOverview from './components/DeployOverview'
