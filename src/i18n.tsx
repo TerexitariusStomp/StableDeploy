@@ -8,7 +8,9 @@ type SupportedLocale = 'en' | 'es' | 'pseudo'
 export const DEFAULT_LOCALE: SupportedLocale = 'en'
 
 export async function dynamicActivate(locale: SupportedLocale) {
-  const { messages } = await import(`./locales/${locale}.po`)
+  const response = await fetch(`/locales/${locale}.po`)
+  const poContent = await response.text()
+  const messages = { default: poContent }
 
   i18n.load(locale, messages)
   i18n.activate(locale)
