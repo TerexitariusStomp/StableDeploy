@@ -9,8 +9,8 @@ import {
   useLocation,
   useNavigate,
 } from 'react-router-dom'
-import ChainProvider from 'state/chain'
-import Updater from 'state/updater'
+import ChainProvider from '@/state/chain'
+import Updater from '@/state/updater'
 import { ThemeUIProvider } from 'theme-ui'
 import { getTokenRoute } from 'utils'
 import AppRoutes from './AppRoutes'
