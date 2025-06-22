@@ -30,7 +30,11 @@ const useContractWrite = <
     maxFeePerBlobGas: undefined,
     maxFeePerGas: undefined,
     maxPriorityFeePerGas: undefined,
-    blobs: undefined
+    blobs: undefined,
+    blobVersionedHashes: undefined,
+    accessList: undefined,
+    dataSuffix: undefined,
+    nonce: undefined
   } : undefined)
 
   const contractWrite = useWriteContract()
@@ -47,7 +51,11 @@ const useContractWrite = <
         maxFeePerBlobGas: undefined,
         maxFeePerGas: undefined,
         maxPriorityFeePerGas: undefined,
-        blobs: undefined
+        blobs: undefined,
+        blobVersionedHashes: undefined,
+        accessList: undefined,
+        dataSuffix: undefined,
+        nonce: undefined
       })
     }
   }, [data?.request, writeContract, gas])
