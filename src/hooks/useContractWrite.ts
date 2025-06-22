@@ -22,14 +22,25 @@ const useContractWrite = <
   const { data, error, isLoading } = useSimulateContract(
     !isWalletInvalid ? (call as UseSimulateContractParameters) : undefined
   )
-  const { data: gas } = useEstimateGas(data?.request)
+  const { data: gas } = useEstimateGas(data?.request ? {
+    ...data.request,
+    type: 'eip1559',
+    account: data.request.account || undefined,
+    gasPrice: undefined
+  } : undefined)
 
   const contractWrite = useWriteContract()
   const { writeContract } = contractWrite
 
   const handleWrite = useCallback(() => {
     if (data?.request && gas) {
-      writeContract({ ...data.request, gas: getSafeGasLimit(gas) })
+      writeContract({
+        ...data.request,
+        gas: getSafeGasLimit(gas),
+        type: 'eip1559',
+        account: data.request.account || undefined,
+        gasPrice: undefined
+      })
     }
   }, [data?.request, writeContract, gas])
 
