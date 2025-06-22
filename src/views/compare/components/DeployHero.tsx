@@ -1,11 +1,11 @@
 import { Trans } from '@lingui/macro'
 import Button from '@/components/old/button'
-import ExternalArrowIcon from 'components/icons/ExternalArrowIcon'
+import ExternalArrowIcon from '@/components/icons/ExternalArrowIcon'
 import { borderRadius } from 'theme'
 import { Box, BoxProps, Flex, Image, Text } from 'theme-ui'
 import DeployerImg from '../assets/deployer_img.png'
 import { useNavigate } from 'react-router-dom'
-import { ROUTES } from 'utils/constants'
+import { ROUTES } from '@/utils/constants'
 
 const DeployHero = (props: BoxProps) => {
   const navigate = useNavigate()
