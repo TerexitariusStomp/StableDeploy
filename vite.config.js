@@ -1,19 +1,31 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 
 export default defineConfig({
-  plugins: [react()],
-  base: '/StableDeploy/', // Matches GitHub repo name
+  plugins: [
+    react(),
+    nodeResolve({
+      browser: true,
+      preferBuiltins: false
+    })
+  ],
+  base: '/StableDeploy/',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      external: ['buffer']
+      external: ['buffer'],
+      onwarn(warning, warn) {
+        if (warning.code === 'MODULE_LEVEL_DIRECTIVE') return
+        warn(warning)
+      }
     }
   },
   optimizeDeps: {
-    include: ['buffer']
+    include: ['buffer'],
+    exclude: ['@wagmi/core']
   },
   resolve: {
     alias: {
@@ -26,5 +38,8 @@ export default defineConfig({
       'theme': path.resolve(__dirname, './src/theme.ts'),
       'abis': path.resolve(__dirname, './src/abis')
     }
+  },
+  define: {
+    'process.env': {}
   }
 })
