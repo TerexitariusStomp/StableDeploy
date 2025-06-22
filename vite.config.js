@@ -6,6 +6,12 @@ export default defineConfig({
   base: '/StableDeploy/', // Matches GitHub repo name
   build: {
     outDir: 'dist',
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      external: ['buffer']
+    }
+  },
+  optimizeDeps: {
+    include: ['buffer']
   }
 })
