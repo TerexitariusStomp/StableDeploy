@@ -1,16 +1,17 @@
 import { Trans } from '@lingui/macro'
-import Button from '@/components/old/button'
-import MenuIcon from 'components/icons/MenuIcon'
-import { MouseoverTooltipContent } from '@/components/old/tooltip'
-import { txSidebarToggleAtom } from 'components/transactions/manager/atoms'
+import Button from '@/components/old/button/index.tsx'
+import MenuIcon from '@/components/icons/MenuIcon.tsx'
+import { MouseoverTooltipContent } from '@/components/old/tooltip/index.tsx'
+import { txSidebarToggleAtom } from '@/components/transactions/manager/atoms.ts'
 import { useAtomValue, useSetAtom } from 'jotai'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { AlertCircle, Power } from 'lucide-react'
 import { Box, Card, Flex, Spinner, Text } from 'theme-ui'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import ChainLogo from 'components/icons/ChainLogo'
-import { chainIdAtom, selectedRTokenAtom } from 'state/atoms'
-import { isTransactionRunning } from 'state/chain/atoms/transactionAtoms'
+import ChainLogo from '@/components/icons/ChainLogo.js'
+import { chainIdAtom } from '@/state/chain/atoms.js'
+import { selectedRTokenAtom } from '@/state/atoms.js'
+import { isTransactionRunning } from '@/state/chain/atoms/transactionAtoms.js'
 
 const ErrorWrapper = ({
   chainId,
@@ -66,7 +67,25 @@ const Account = () => {
 
   return (
     <ConnectButton.Custom>
-      {({ account, chain, openConnectModal, mounted }) => {
+      {({
+        account,
+        chain,
+        openConnectModal,
+        mounted
+      }: {
+        account?: {
+          address: string
+          displayName: string
+          displayBalance?: string
+        }
+        chain?: {
+          id: number
+          name?: string
+          unsupported?: boolean
+        }
+        openConnectModal: () => void
+        mounted: boolean
+      }) => {
         const ready = mounted
         const connected = ready && account && chain
         const invalidChain =

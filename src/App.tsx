@@ -1,20 +1,20 @@
 import RouteAnalytics from '@/components/utils/route-analytics.js'
 import ToastContainer from '@/components/old/toaster-container/ToastContainer.js'
-import TransactionSidebar from 'components/transactions/manager/TransactionSidebar.js'
+import TransactionSidebar from '@/components/transactions/manager/TransactionSidebar.js'
 import mixpanel from 'mixpanel-browser/src/loaders/loader-module-core'
 import { useEffect } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
-import { BrowserRouter as Router } from 'react-router-dom'
-import type {
+import {
+  BrowserRouter as Router,
   useLocation,
-  useNavigate,
+  useNavigate
 } from 'react-router-dom'
-import ChainProvider from '@/state/chain'
-import Updater from '@/state/updater'
+import ChainProvider from '@/state/chain/index.js'
+import Updater from '@/state/updater/index.js'
 import { ThemeUIProvider } from 'theme-ui'
-import { getTokenRoute } from '@/utils'
-import AppRoutes from './AppRoutes.js.js'
-import Layout from './components/layout/index.js.js'
+import { getTokenRoute } from '@/utils/index.js'
+import AppRoutes from './AppRoutes.js'
+import Layout from './components/layout/index.js'
 import LanguageProvider from './i18n.js'
 import { theme } from './theme.js'
 
