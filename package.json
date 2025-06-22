@@ -55,8 +55,7 @@
     "tailwindcss-animate": "^1.0.7",
     "theme-ui": "0.17.1",
     "viem": "2.21.48",
-    "wagmi": "2.21.48",
-    "@rainbow-me/rainbowkit": "2.2.0"
+    "wagmi": "2.15.6"
   },
   "scripts": {
     "start": "vite",
