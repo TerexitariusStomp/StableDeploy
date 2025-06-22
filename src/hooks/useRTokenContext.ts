@@ -1,15 +1,15 @@
 import rtokens from '@reserve-protocol/rtokens'
-import RToken from 'abis/RToken'
+import RToken from '@/abis/RToken'
 import { useAtomValue, useSetAtom } from 'jotai'
 import { useEffect, useMemo } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { chainIdAtom, walletChainAtom } from 'state/atoms'
+import { chainIdAtom, walletChainAtom } from '@/state/atoms'
 import {
   rTokenMetaAtom,
   selectedRTokenAtom,
-} from 'state/rtoken/atoms/rTokenAtom'
-import { AvailableChain } from 'utils/chains'
-import { NETWORKS, ROUTES } from 'utils/constants'
+} from '@/state/rtoken/atoms/rTokenAtom'
+import { AvailableChain } from '@/utils/chains'
+import { NETWORKS, ROUTES } from '@/utils/constants'
 import { Address, getAddress } from 'viem'
 import { useReadContracts, useSwitchChain } from 'wagmi'
 

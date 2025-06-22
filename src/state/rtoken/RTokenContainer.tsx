@@ -1,5 +1,5 @@
-import TokenNavigation from 'components/layout/navigation/TokenNavigation'
-import useRTokenContext from 'hooks/useRTokenContext'
+import TokenNavigation from '@/components/layout/navigation/TokenNavigation'
+import useRTokenContext from '@/hooks/useRTokenContext'
 import { Outlet } from 'react-router-dom'
 import { Box } from 'theme-ui'
 
