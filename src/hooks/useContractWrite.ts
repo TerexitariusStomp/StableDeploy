@@ -25,7 +25,7 @@ const useContractWrite = <
   const { data: gas } = useEstimateGas(data?.request ? {
     ...data.request,
     type: 'eip1559',
-    account: data.request.account ? { address: data.request.account } : undefined,
+    account: data.request.account,
     gasPrice: undefined,
     maxFeePerBlobGas: undefined,
     maxFeePerGas: undefined,
@@ -41,7 +41,7 @@ const useContractWrite = <
         ...data.request,
         gas: getSafeGasLimit(gas),
         type: 'eip1559',
-        account: data.request.account ? { address: data.request.account } : undefined,
+        account: data.request.account,
         gasPrice: undefined,
         maxFeePerBlobGas: undefined,
         maxFeePerGas: undefined,
