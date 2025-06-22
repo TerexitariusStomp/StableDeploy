@@ -22,7 +22,8 @@ export default defineConfig({
       'state': path.resolve(__dirname, './src/state'),
       'utils': path.resolve(__dirname, './src/utils'),
       'views': path.resolve(__dirname, './src/views'),
-      'hooks': path.resolve(__dirname, './src/hooks')
+      'hooks': path.resolve(__dirname, './src/hooks'),
+      'theme': path.resolve(__dirname, './src/theme.ts')
     }
   }
 })
