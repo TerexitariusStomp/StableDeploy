@@ -1,10 +1,11 @@
 import { t } from '@lingui/macro'
-import { CellContext } from '@tanstack/react-table'
-import ERC20 from '@/abis/ERC20'
+import type { CellContext } from '@tanstack/react-table'
+import ERC20 from '../abis/ERC20'
 import humanizeDuration from 'humanize-duration'
-import { BigNumberMap } from 'types'
-import { Address, getAddress, parseEther, parseUnits } from 'viem'
-import { CHAIN_TO_NETWORK, ROUTES } from './constants'
+import type { BigNumberMap } from '../types'
+import { getAddress, parseEther, parseUnits } from 'viem'
+import type { Address } from 'viem'
+import { CHAIN_TO_NETWORK, ROUTES } from './constants.js'
 import dayjs from 'dayjs'
 
 export const decimalPattern = /^[0-9]*[.]?[0-9]*$/i
