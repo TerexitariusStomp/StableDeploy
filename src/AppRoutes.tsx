@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom/dist'
 import RTokenContainer from '@/state/rtoken/RTokenContainer'
 import { Box } from 'theme-ui'
 import { ROUTES } from '@/utils/constants'
