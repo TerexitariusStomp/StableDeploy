@@ -12,7 +12,7 @@ import {
 import ChainProvider from '@/state/chain'
 import Updater from '@/state/updater'
 import { ThemeUIProvider } from 'theme-ui'
-import { getTokenRoute } from 'utils'
+import { getTokenRoute } from '@/utils'
 import AppRoutes from './AppRoutes'
 import Layout from './components/layout'
 import LanguageProvider from './i18n'
