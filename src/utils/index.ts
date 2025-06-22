@@ -1,6 +1,6 @@
 import { t } from '@lingui/macro'
 import { CellContext } from '@tanstack/react-table'
-import ERC20 from 'abis/ERC20'
+import ERC20 from '@/abis/ERC20'
 import humanizeDuration from 'humanize-duration'
 import { BigNumberMap } from 'types'
 import { Address, getAddress, parseEther, parseUnits } from 'viem'
